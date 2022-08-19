@@ -1,0 +1,13 @@
+.box{
+    width: 100%;
+    height: 10rem;
+    background-color: black;
+}
+.box2{
+    width: 100%;
+    height: 10rem;
+    background-color: rgb(240, 95, 95);
+}
+.gridd{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+}

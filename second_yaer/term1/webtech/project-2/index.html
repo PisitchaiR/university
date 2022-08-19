@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation</title>
+    <link rel="stylesheet" href="./src/css/tailwind.css">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center" id="home">
+    <!-- navbar -->
+    <nav class="w-full shadow px-12 sticky top-0">
+        <div class="flex justify-between items-center mx-auto">
+            <a href="#home" class="w-1/12"><img src="./src/img/tailwindcss-ar21.svg" alt=""></a>
+            <div class="nav-link">
+                <a href="#home" class="hover:text-gray-400 hover:underline mr-4">หัวข้อแรก</a>
+                <a href="#install" class="hover:text-gray-400 hover:underline mr-4">วิธีการติดตั้ง</a>
+                <a href="#use" class="hover:text-gray-400 hover:underline mr-4">วิธิใช้</a>
+                <a href="#example" class="hover:text-gray-400 hover:underline mr-4">ตัวอย่าง</a>
+                <a href="#maker" class="hover:text-gray-400 hover:underline mr-4">ผู้จัดทำ</a>
+                <a href="#source" class="hover:text-gray-400 hover:underline mr-4">แหล่งที่มา</a>
+            </div>
+        </div>
+    </nav>
+    <!-- what is a tailwind -->
+    <section class="container px-40">
+        <div class="text-3xl uppercase container my-4">
+            tailwind คืออะไร??
+            <hr class="my-4">
+        </div>
+        <div class="px-8 mt-4 text-base">
+            <div class="rounded-md p-4 shadow-md font">
+                Tailwind เป็นเฟรมเวิร์ก CSS แรกของยูทิลิตี้ ตรงกันข้ามกับ CSS framework อื่น ๆ เช่น Bootstrap หรือ
+                Materialize CSS ซึ่งไม่ได้มาพร้อมกับส่วนประกอบที่กำหนดไว้ล่วงหน้า แต่ Tailwind CSS
+                ทำงานในระดับที่ต่ำกว่าและมอบชุดของคลาสตัวช่วย CSS ให้คุณ
+                ด้วยการใช้คลาสนี้คุณสามารถสร้างการออกแบบที่กำหนดเองได้อย่างรวดเร็ว Tailwind CSS
+                ไม่ได้ให้ความเห็นและให้คุณสร้างการออกแบบที่เป็นเอกลักษณ์ของคุณเอง
+            </div>
+        </div>
+    </section>
+    <!-- detail of tailwind -->
+    <section class="container px-40">
+        <div class="text-3xl uppercase container my-4">
+            รายละเอียดของ tailwind
+            <hr class="my-4">
+        </div>
+        <div class="px-8 mt-4 text-base">
+            <div class="rounded-md p-4 shadow-md font">
+                CSS framework ที่มาพร้อม style พื้นฐานที่มีให้ตั้งแต่ color palette, spacing, shadow ฯลฯ
+                เตรียมไว้ให้เสร็จสรรพ ข้อดีคือหน้าตาของเว็บเราก็จะไปในแนวทางเดียวกัน มีเฉดสี มีสเกลให้
+                ทำให้เราควบคุมความหลากหลายของตัวเลขและค่าต่างๆ ไม่ให้ฟุ้งและกระจัดกระจายเกินไป
+            </div>
+        </div>
+    </section>
+    <!-- how to install -->
+    <section id="install" class="container px-40">
+        <div class="text-3xl uppercase container mt-10">
+            วิธีการติดตั้ง
+            <hr class="mt-4">
+        </div>
+        <div class="px-8 mt-4 text-xl">
+            <ol class="list-decimal">
+                <li class="uppercase">โดยการใช้ cdn</li>
+                <div class="ml-4 my-4">
+                    <div class="rounded-md p-4 shadow-md bg-white">
+                        <pre
+                            class="text-base">&lt;link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></pre>
+                    </div>
+                </div>
+                <li class="uppercase">ติดดั้งจาก node</li>
+                <div class="ml-4 my-4 text-gray-500">
+                    1. สร้างโฟร์เดอร์ แล้วเปิด terminal แล้วเข้าถึงไปยังที่อยู่ของไฟล์นั้น แล้วพิมพ์คำสั่ง
+                    <div class="rounded-md p-4 shadow-md bg-white text-gray-800">
+                        npm install tailwindcss
+                    </div>
+                </div>
+                <div class="ml-4 my-4 text-gray-500">
+                    2. สร้างไฟล์ main.css
+                    <div class="rounded-md p-4 shadow-md bg-white text-gray-800">
+                        @tailwind base;<br>
+                        @tailwind components;<br>
+                        @tailwind utilities;<br>
+                    </div>
+                </div>
+                <div class="ml-4 my-4 text-gray-500">
+                    3. แก้ไขในไฟล์ package.json โดยเพิ่มคำสั่ง
+                    <div class="rounded-md p-4 shadow-md bg-white text-gray-800">
+                        {<br>
+                        <tab1>"name": "projectweb",<br>
+                            <tab1>"version": "1.0.0",<br>
+                                <tab1>"description": "",<br>
+                                    <tab1>"main": "index.js",<br>
+                                        <tab1>"scripts": {<br>
+                                            <tab2>"test": "echo \"Error: no test specified\" && exit 1",<br>
+                                                <tab2 class="text-red-400">"build:css": "tailwindcss -i ./ที่อยู่ของไฟล์
+                                                    main.css -o ./ที่อยู่ของไฟล์ที่จะสร้าง<br>(ตัวอย่าง tailwind.css)"
+                                                </tab2><br>
+                                                <tab1>},<br>
+                                                    <tab1>"keywords": [],<br>
+                                                        <tab1>"author": "",<br>
+                                                            <tab1>"license": "ISC",<br>
+                                                                <tab1>"dependencies": {<br>
+                                                                    <tab2>"tailwindcss": "^2.2.17",<br>
+                                                                        <tab1>}<br>
+                                                                            }<br>
+                    </div>
+                </div>
+                <div class="ml-4 my-4 text-gray-500">
+                    4. พิมพ์ใน terminal เพื่อาสร้่างไฟล์ tailwind
+                    <div class="rounded-md p-4 shadow-md bg-white text-gray-800">
+                        npm run build:css
+                    </div>
+                </div>
+            </ol>
+        </div>
+    </section>
+    <!-- how to use -->
+    <section id="use" class="container mt-4 px-40">
+        <div class="text-3xl uppercase container my-4 mt-10">
+            วิธีการใช้งาน
+            <hr class="my-4">
+        </div>
+        <div class="px-8 mt-4 text-xl">
+            <ul class="list-disc">
+                <li>โดยการใช้ cdn</li>
+                <div class="ml-4 my-4">
+                    <div class="rounded-md p-4 shadow-md bg-white text-gray-800">
+                        <pre class="text-base">
+&lt;!doctype html>
+&lt;html>
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+&lt;/head>
+&lt;body>
+    &lt;!-- ... --&gt;
+&lt;/body>
+&lt;/html>
+                        </pre>
+                    </div>
+                </div>
+                <li>โดยการใช้ไฟล์ภายในเครื่อง</li>
+                <div class="ml-4 my-4">
+                    <div class="rounded-md p-4 shadow-md bg-white text-gray-800">
+                        <pre class="text-base">
+&lt;!doctype html>
+&lt;html>
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;link href="/path/to/tailwind.css" rel="stylesheet"> &lt;-- เชื่อมตัวที่อยู่ภายในเครื่อง
+&lt;/head>
+&lt;body>
+    &lt;!-- ... --&gt;
+&lt;/body>
+&lt;/html>
+                        </pre>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </section>
+    <!-- example -->
+    <section id="example" class="container mt-4 px-40">
+        <div class="text-3xl uppercase container my-4 mt-10">
+            ตัวอย่างการใช้งาน
+            <hr class="my-4">
+        </div>
+        <div class="w-full rounded-md shadow-md p-5 mb-5">
+            ตัวอย่างเว็บที่มีการเอา tailwind มาใช้ :
+            <a href="https://collegefind.in/?ref=builtwithtailwind.com" class="rounded-full bg-blue-300 p-2 text-white px-2">Collegefind</a>
+            <a href="https://www.connectuniversally.com/?ref=builtwithtailwind.com" class="rounded-full bg-blue-300 p-2 text-white px-2">Connect Universally</a>
+        </div>
+        <nav class="w-full shadow-md px-12">
+            <div class="flex justify-center items-center mx-auto p-4 ">
+                <div class="nav-link">
+                    <a href="#layout" class="hover:text-gray-400 hover:underline mr-4 uppercase">layout</a>
+                    <a href="#flexbox" class="hover:text-gray-400 hover:underline mr-4 uppercase">flexbox</a>
+                    <a href="#borders" class="hover:text-gray-400 hover:underline mr-4">เส้นขอบ</a>
+                </div>
+            </div>
+        </nav>
+        <div id="layout" class="px-8 mt-4 text-xl">
+            <div class="text-2xl uppercase container my-4 flex items-end">
+                layout
+                <nav class="flex ml-4">
+                    <a href="#container"
+                        class="hover:text-gray-400 hover:underline mr-4 uppercase text-base">container</a>
+                    <a href="#block" class="hover:text-gray-400 hover:underline mr-4 uppercase text-base">block</a>
+                    <a href="#float" class="hover:text-gray-400 hover:underline mr-4 text-base">float</a>
+                </nav>
+                <hr class="my-4">
+            </div>
+            <div class="px-8 mt-4 text-xl">
+                <ul class="list-disc">
+                    <!-- container -->
+                    <li id="container" class="text-gray-600">container</li>
+                    <div class="ml-4 my-4">
+                        <div class="text-base">ส่วนประกอบสำหรับกำหนดความกว้างขององค์ประกอบเป็นเบรกพอยต์ปัจจุบัน</div>
+                        <table class="w-full text-left border-collapse my-4">
+                            <colgroup>
+                                <col class="w-1/4">
+                                <col class="w-1/4">
+                                <col class="w-1/2">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 border-b border-gray-200">Class</div>
+                                    </th>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 border-b border-gray-200">ขอบคุณ</div>
+                                    </th>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 border-b border-gray-200">คุณสมบัติ</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-baseline">
+                                <tr>
+                                    <td translate="no" rowspan="6"
+                                        class="py-2 font-mono text-xs text-purple-600 whitespace-nowrap">container</td>
+                                    <td translate="no" class="py-2 border-t border-gray-200 font-mono text-xs">sm <span
+                                            class="font-sans italic">(640px)</span></td>
+                                    <td translate="no"
+                                        class="py-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        max-width: 640px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no" class="py-2 border-t border-gray-200 font-mono text-xs">sm <span
+                                            class="font-sans italic">(640px)</span></td>
+                                    <td translate="no"
+                                        class="py-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        max-width: 640px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no" class="py-2 border-t border-gray-200 font-mono text-xs">md <span
+                                            class="font-sans italic">(768px)</span></td>
+                                    <td translate="no"
+                                        class="py-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        max-width: 768px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no" class="py-2 border-t border-gray-200 font-mono text-xs">lg <span
+                                            class="font-sans italic">(1024px)</span></td>
+                                    <td translate="no"
+                                        class="py-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        max-width: 1024px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no" class="py-2 border-t border-gray-200 font-mono text-xs">xl <span
+                                            class="font-sans italic">(1280px)</span></td>
+                                    <td translate="no"
+                                        class="py-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        max-width: 1280px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no" class="py-2 border-t border-gray-200 font-mono text-xs">2xl <span
+                                            class="font-sans italic">(1536px)</span></td>
+                                    <td translate="no"
+                                        class="py-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        max-width: 1536px;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-base">การใช้งาน</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            `container`ระดับชุด`max-width`ขององค์ประกอบเพื่อให้ตรงกับ`min-width`ของเบรกพอยต์ในปัจจุบัน<br>
+                            สิ่งนี้มีประโยชน์หากต้องการออกแบบชุดหน้าจอขนาดคงที่<br>
+                            แทนที่จะพยายามปรับให้เข้ากับวิวพอร์ต<br>
+                            ปกติคอนเทนเนอร์ของ Tailwind ไม่ได้จัดศูนย์กลางตัวเองโดยอัตโนมัติ<br>
+                            และไม่มีช่องว่างภายในแนวนอนในตัวไม่เหมือนกับคอนเทนเนอร์ที่คุณเคยใช้ในเฟรมเวิร์กอื่น<br>
+                        </div>
+                        <div class="text-base">หากต้องการจัดคอนเทนเนอร์ให้อยู่ตรงกลาง ให้ใช้ `mx-auto` :</div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4">
+                            <pre class="text-base">
+&lt;div class="container mx-auto">
+    &lt;!-- ... --&gt;
+&lt;/div></pre>
+                        </div>
+                        <div class="text-base mt-4">หากต้องการเพิ่มช่องว่างภายในแนวนอน ให้ใช้ `px-{size}` :</div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4">
+                            <pre class="text-base">
+&lt;div class="container mx-auto px-4">
+    &lt;!-- ... --&gt;
+&lt;/div></pre>
+                        </div>
+                    </div>
+                    <!-- box decoration break -->
+                    <li id="block" class="text-gray-600">block</li>
+                    <div class="ml-4 my-4">
+                        <div class="text-base">ใช้สำหรับควบคุมประเภทกล่องแสดงผลขององค์ประกอบ</div>
+                        <table class="w-full text-left border-collapse my-4">
+                            <thead>
+                                <tr>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pr-2 border-b border-gray-200">คลาส</div>
+                                    </th>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pl-2 border-b border-gray-200">คุณสมบัติ</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-baseline">
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap">block</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal">
+                                        display:block;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        inline-block</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: inline-block;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        inline</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: inline;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        flex</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: flex;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        inline-flex</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: inline-flex;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        table</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: table;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        inline-table</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: inline-table;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        table-caption</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: table-caption;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        table-cell</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: table-cell;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        table-column</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: table-column;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        table-column-group</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: table-column-group;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        table-footer-group</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: table-footer-group;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        table-header-group</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: table-header-group;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        table-row-group</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: table-row-group;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        table-row</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: table-row;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        flow-root</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: flow-root;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        grid</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: grid;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        inline-grid</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: inline-grid;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        contents</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: contents;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        list-item</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: list-item;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        hidden</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        display: none;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-xl">block</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้`block`เพื่อสร้างองค์ประกอบระดับบล็อก
+                        </div>
+                        <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 p-10 mt-4">
+                            <div class="p-4 space-y-4 bg-blue-300 bg-stripes bg-stripes-white rounded-md">
+                                <span
+                                    class="block rounded-md text-white font-extrabold text-center bg-blue-500 p-6">1</span>
+                                <span
+                                    class="block rounded-md text-white font-extrabold text-center bg-blue-500 p-6">2</span>
+                                <span
+                                    class="block rounded-md text-white font-extrabold text-center bg-blue-500 p-6">3</span>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4">
+                            <pre class="text-base">
+&lt;div class="space-y-4 ...">
+    &lt;span class="block ...">1&lt;/span>
+    &lt;span class="block ...">2&lt;/span>
+    &lt;span class="block ...">3&lt;/span>
+&lt;/div></pre>
+                        </div>
+                        <div class="text-xl mt-4">inline block</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้`inline-block`เพื่อสร้างองค์ประกอบระดับบล็อกแบบอินไลน์
+                        </div>
+                        <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-red-50 to-red-100 p-10 mt-4">
+                            <div class="p-4 space-x-4 bg-red-300 bg-stripes bg-stripes-white rounded-md">
+                                <div
+                                    class="inline-block rounded-md text-white font-extrabold text-center bg-red-500 px-6 py-4">
+                                    1</div>
+                                <div
+                                    class="inline-block rounded-md text-white font-extrabold text-center bg-red-500 px-6 py-4">
+                                    2</div>
+                                <div
+                                    class="inline-block rounded-md text-white font-extrabold text-center bg-red-500 px-6 py-4">
+                                    3</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4">
+                            <pre class="text-base">
+&lt;div class="space-x-4 ...">
+    &lt;div class="inline-block ...">1&lt;/div>
+    &lt;div class="inline-block ...">2&lt;div>
+    &lt;div class="inline-block ...">3&lt;/div>
+&lt;/div></pre>
+                        </div>
+                        <div class="text-xl mt-4">flex</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้`flex`เพื่อสร้างคอนเทนเนอร์แบบยืดหยุ่นระดับบล็อก
+                        </div>
+                        <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-green-50 to-green-100 p-10">
+                            <div class="p-4 flex space-x-4 bg-green-300 bg-stripes bg-stripes-white rounded-md">
+                                <div class="flex-1 rounded-md text-white font-extrabold text-center bg-green-500 p-6">
+                                    1</div>
+                                <div class="flex-1 rounded-md text-white font-extrabold text-center bg-green-500 p-6">
+                                    2</div>
+                                <div class="flex-1 rounded-md text-white font-extrabold text-center bg-green-500 p-6">
+                                    3</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4">
+                            <pre class="text-base">
+&lt;div class="flex space-x-4...">
+    &lt;div class="flex-1 ...">1&lt;/div>
+    &lt;div class="flex-1 ...">2&lt;div>
+    &lt;div class="flex-1 ...">3&lt;/div>
+&lt;/div></pre>
+                        </div>
+                        <div class="text-xl mt-4">Grid</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้`grid`สร้างคอนเทนเนอร์กริด
+                        </div>
+                        <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 p-10">
+                            <div
+                                class="p-4 grid gap-4 grid-cols-3 bg-purple-300 bg-stripes bg-stripes-white rounded-md">
+                                <div class="bg-purple-400 rounded-md h-12"></div>
+                                <div class="bg-purple-500 rounded-md h-12"></div>
+                                <div class="bg-purple-400 rounded-md h-12"></div>
+                                <div class="bg-purple-500 rounded-md h-12"></div>
+                                <div class="bg-purple-400 rounded-md h-12"></div>
+                                <div class="bg-purple-500 rounded-md h-12"></div>
+                                <div class="bg-purple-400 rounded-md h-12"></div>
+                                <div class="bg-purple-500 rounded-md h-12"></div>
+                                <div class="bg-purple-400 rounded-md h-12"></div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4">
+                            <pre class="text-base">
+&lt;div class="grid gap-4 grid-cols-3...">
+    &lt;!-- ... --&gt;
+&lt;/div></pre>
+                        </div>
+                    </div>
+                    <!-- Floats -->
+                    <li id="float" class="text-gray-600">Floats</li>
+                    <div class="ml-4 my-4">
+                        <div class="text-base">สำหรับควบคุมการห่อเนื้อหารอบองค์ประกอบ</div>
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pr-2 border-b border-gray-200">คลาส</div>
+                                    </th>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pl-2 border-b border-gray-200">คุณสมบัติ</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-baseline">
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap">
+                                        float-right</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal">float:
+                                        right;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal border-t border-gray-200">
+                                        float-left</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        float: left;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal border-t border-gray-200">
+                                        float-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        float: none;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-xl mt-4">ลอยขวา</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้ `float-right` เพื่อลอยองค์ประกอบทางด้านขวาของคอนเทนเนอร์
+                        </div>
+                        <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-green-50 to-green-100 p-10">
+                            <img class="float-right mt-2 mr-0 mb-4 ml-10 h-32" src="./src/img/placeholder-green.svg">
+                            <p class="text-green-500 font-flow text-justify font-medium">Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Nam venenatis et lorem sit amet vehicula. Etiam vel nibh
+                                nec nisi euismod mollis ultrices condimentum velit. Proin velit libero, interdum ac
+                                rhoncus sit amet, pellentesque ac turpis. Quisque ac luctus turpis, vel efficitur ante.
+                                Cras convallis risus vel vehicula dapibus. Donec eget neque fringilla, faucibus mi quis,
+                                porttitor magna. Cras pellentesque leo est, et luctus neque rutrum eu. Aliquam consequat
+                                velit sed sem posuere, vitae sollicitudin mi consequat. Mauris eget ipsum sed dui rutrum
+                                fringilla. Donec varius vehicula magna sit amet auctor. Ut congue vehicula lectus in
+                                blandit. Vivamus suscipit eleifend turpis, nec sodales sem vulputate a. Curabitur
+                                pulvinar libero viverra, efficitur odio eu, finibus justo. Etiam eu vehicula felis.</p>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4">
+                            <pre class="text-base overflow-x-auto">
+&lt;img class="float-right ..." src="path/to/image.jpg">
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis et lorem sit amet vehicula. Etiam vel nibh nec nisi euismod mollis ultrices condimentum velit. Proin velit libero, interdum ac rhoncus sit amet, pellentesque ac turpis. Quisque ac luctus turpis, vel efficitur ante. Cras convallis risus vel vehicula dapibus. Donec eget neque fringilla, faucibus mi quis, porttitor magna. Cras pellentesque leo est, et luctus neque rutrum eu. Aliquam consequat velit sed sem posuere, vitae sollicitudin mi consequat. Mauris eget ipsum sed dui rutrum fringilla. Donec varius vehicula magna sit amet auctor. Ut congue vehicula lectus in blandit. Vivamus suscipit eleifend turpis, nec sodales sem vulputate a. Curabitur pulvinar libero viverra, efficitur odio eu, finibus justo. Etiam eu vehicula felis.</p>
+</pre>
+                        </div>
+                        <div class="text-base mt-4">ลอยซ้าย</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้ `float-left` เพื่อลอยองค์ประกอบทางด้านซ้ายของคอนเทนเนอร์
+                        </div>
+                        <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 p-10">
+                            <img class="float-left mt-2 ml-0 mb-4 mr-10 h-32" src="./src/img/placeholder-indigo.svg">
+                            <p class="text-purple-500 font-flow text-justify font-medium">Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Nam venenatis et lorem sit amet vehicula. Etiam vel nibh
+                                nec nisi euismod mollis ultrices condimentum velit. Proin velit libero, interdum ac
+                                rhoncus sit amet, pellentesque ac turpis. Quisque ac luctus turpis, vel efficitur ante.
+                                Cras convallis risus vel vehicula dapibus. Donec eget neque fringilla, faucibus mi quis,
+                                porttitor magna. Cras pellentesque leo est, et luctus neque rutrum eu. Aliquam consequat
+                                velit sed sem posuere, vitae sollicitudin mi consequat. Mauris eget ipsum sed dui rutrum
+                                fringilla. Donec varius vehicula magna sit amet auctor. Ut congue vehicula lectus in
+                                blandit. Vivamus suscipit eleifend turpis, nec sodales sem vulputate a. Curabitur
+                                pulvinar libero viverra, efficitur odio eu, finibus justo. Etiam eu vehicula felis.</p>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4">
+                            <pre class="text-base overflow-x-auto">
+&lt;img class="float-left ..." src="path/to/image.jpg">
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis et lorem sit amet vehicula. Etiam vel nibh nec nisi euismod mollis ultrices condimentum velit. Proin velit libero, interdum ac rhoncus sit amet, pellentesque ac turpis. Quisque ac luctus turpis, vel efficitur ante. Cras convallis risus vel vehicula dapibus. Donec eget neque fringilla, faucibus mi quis, porttitor magna. Cras pellentesque leo est, et luctus neque rutrum eu. Aliquam consequat velit sed sem posuere, vitae sollicitudin mi consequat. Mauris eget ipsum sed dui rutrum fringilla. Donec varius vehicula magna sit amet auctor. Ut congue vehicula lectus in blandit. Vivamus suscipit eleifend turpis, nec sodales sem vulputate a. Curabitur pulvinar libero viverra, efficitur odio eu, finibus justo. Etiam eu vehicula felis.</p>
+</pre>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <!-- flex box -->
+        <div id="flexbox" class="px-8 mt-4 text-xl">
+            <div class="text-2xl uppercase container my-4 flex items-end">
+                flex-box
+                <nav class="flex ml-4">
+                    <a href="#direction" class="hover:text-gray-400 hover:underline mr-4 uppercase text-base">FLEX
+                        DIRECTION</a>
+                    <a href="#wrap" class="hover:text-gray-400 hover:underline mr-4 uppercase text-base">FLEX WRAP</a>
+                    <a href="#flex" class="hover:text-gray-400 hover:underline mr-4 text-base">FLEX</a>
+                </nav>
+                <hr class="my-4">
+            </div>
+            <div class="px-8 mt-4 text-xl">
+                <ul class="list-disc">
+                    <!-- flex direction -->
+                    <li id="direction" class="text-gray-600">Flex Direction</li>
+                    <div class="ml-4 my-4">
+                        <div class="text-base">สำหรับควบคุมทิศทางของรายการแบบยืดหยุ่น</div>
+                        <table class="w-full text-left border-collapse mt-4">
+                            <thead>
+                                <tr>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pr-2 border-b border-gray-200">คลาส</div>
+                                    </th>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pl-2 border-b border-gray-200">คุณสมบัติ</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-baseline">
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal">flex-row
+                                    </td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal">
+                                        flex-direction: row;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal border-t border-gray-200">
+                                        flex-row-reverse</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        flex-direction: row-reverse;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal border-t border-gray-200">
+                                        flex-col</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        flex-direction: column;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal border-t border-gray-200">
+                                        flex-col-reverse</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        flex-direction: column-reverse;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-xl mt-4">แถว</div>
+                        <div class="text-base mt-4 ml-4">ใช้flex-rowเพื่อจัดตำแหน่งรายการ flex
+                            ในแนวนอนในทิศทางเดียวกับข้อความ :</div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-yellow-50 to-yellow-100 p-4 ml-4 mt-4">
+                            <div class="flex flex-row space-x-4">
+                                <div
+                                    class="w-16 h-16 rounded-md bg-yellow-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    1</div>
+                                <div
+                                    class="w-16 h-16 rounded-md bg-yellow-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    2</div>
+                                <div
+                                    class="w-16 h-16 rounded-md bg-yellow-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    3</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base">
+&lt;div class="flex flex-row ...">
+    &lt;div>1&lt;/div>
+    &lt;div>2&lt;/div>
+    &lt;div>3&lt;/div>
+&lt;/div></pre>
+                        </div>
+                        <div class="text-xl mt-4">กลับแถว</div>
+                        <div class="text-base mt-4 ml-4">ใช้`flex-row`เพื่อจัดตำแหน่งรายการ flex
+                            ในแนวนอนในทิศทางเดียวกับข้อความ :</div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 p-4 ml-4 mt-4">
+                            <div class="flex flex-row-reverse space-x-reverse space-x-4">
+                                <div
+                                    class="w-16 h-16 rounded-md bg-blue-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    1</div>
+                                <div
+                                    class="w-16 h-16 rounded-md bg-blue-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    2</div>
+                                <div
+                                    class="w-16 h-16 rounded-md bg-blue-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    3</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base">
+&lt;div class="flex flex-row-reverse ...">
+    &lt;div>1&lt;/div>
+    &lt;div>2&lt;/div>
+    &lt;div>3&lt;/div>
+&lt;/div></pre>
+                        </div>
+                        <div class="text-xl mt-4">คอลัมน์</div>
+                        <div class="text-base mt-4 ml-4">ใช้`flex-col`เพื่อจัดตำแหน่งรายการดิ้นในแนวตั้ง :</div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-green-50 to-green-100 p-4 ml-4 mt-4">
+                            <div class="flex flex-col space-y-4">
+                                <div
+                                    class="h-16 rounded-md bg-green-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    1</div>
+                                <div
+                                    class="h-16 rounded-md bg-green-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    2</div>
+                                <div
+                                    class="h-16 rounded-md bg-green-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    3</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base">
+&lt;div class="flex flex-col ...">
+    &lt;div>1&lt;/div>
+    &lt;div>2&lt;/div>
+    &lt;div>3&lt;/div>
+&lt;/div></pre>
+                        </div>
+                        <div class="text-xl mt-4">กลับคอลัมน์</div>
+                        <div class="text-base mt-4 ml-4">ใช้flex-col-reverseเพื่อจัดตำแหน่งรายการ flex
+                            ในแนวตั้งในทิศทางตรงกันข้าม :</div>
+                        <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-red-50 to-red-100 p-4 ml-4 mt-4">
+                            <div class="flex flex-col-reverse space-y-reverse space-y-4">
+                                <div
+                                    class="h-16 rounded-md bg-red-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    1</div>
+                                <div
+                                    class="h-16 rounded-md bg-red-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    2</div>
+                                <div
+                                    class="h-16 rounded-md bg-red-500 text-white flex items-center justify-center text-2xl font-extrabold">
+                                    3</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base">
+&lt;div class="flex flex-col-reverse ...">
+    &lt;div>1&lt;/div>
+    &lt;div>2&lt;/div>
+    &lt;div>3&lt;/div>
+&lt;/div></pre>
+                        </div>
+                    </div>
+                    <!-- flex wrap -->
+                    <li id="wrap" class="text-gray-600">Flex Wrap</li>
+                    <div class="ml-4 my-4">
+                        <div class="text-base">ยูทิลิตีสำหรับควบคุมวิธีห่อรายการแบบยืดหยุ่น</div>
+                        <table class="w-full text-left border-collapse mt-4">
+                            <thead>
+                                <tr>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pr-2 border-b border-gray-200">Class</div>
+                                    </th>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pl-2 border-b border-gray-200">Properties</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-baseline">
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal">flex-wrap
+                                    </td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal">
+                                        flex-wrap: wrap;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal border-t border-gray-200">
+                                        flex-wrap-reverse</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        flex-wrap: wrap-reverse;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal border-t border-gray-200">
+                                        flex-nowrap</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        flex-wrap: nowrap;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-xl mt-4">ไม่ห่อหุ้ม</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้ `flex-nowrap` เพื่อป้องกันสินค้าที่ยืดหยุ่นจากการห่อ
+                            ทำให้สินค้าที่ไม่ยืดหยุ่นจะล้นภาชนะหากจำเป็น:
+                        </div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-green-50 to-green-100 p-10 ml-4 mt-4">
+                            <div class="flex flex-nowrap space-x-4">
+                                <div
+                                    class="h-12 w-2/5 rounded-md text-white flex-none bg-green-500 flex items-center justify-center text-2xl font-semibold ">
+                                    1</div>
+                                <div
+                                    class="h-12 w-2/5 rounded-md text-white flex-none bg-green-500 flex items-center justify-center text-2xl font-semibold ">
+                                    2</div>
+                                <div
+                                    class="h-12 w-2/5 rounded-md text-white flex-none bg-green-500 flex items-center justify-center text-2xl font-semibold ">
+                                    3</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base">
+&lt;div class="flex flex-nowrap">
+    &lt;div>1&lt;/div>
+    &lt;div>2&lt;/div>
+    &lt;div>3&lt;/div>
+&lt;/div></pre>
+                        </div>
+                        <div class="text-xl mt-4">ห่อตามปกติ</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้ `flex-wrap` เพื่ออนุญาตให้ห่อรายการแบบยืดหยุ่นได้:
+                        </div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 p-10 ml-4 mt-4">
+                            <div class="flex flex-wrap -m-2">
+                                <div
+                                    class="h-12 m-2 w-2/5 rounded-md text-white bg-blue-500 flex items-center justify-center text-2xl font-semibold ">
+                                    1</div>
+                                <div
+                                    class="h-12 m-2 w-2/5 rounded-md text-white bg-blue-500 flex items-center justify-center text-2xl font-semibold ">
+                                    2</div>
+                                <div
+                                    class="h-12 m-2 w-2/5 rounded-md text-white bg-blue-500 flex items-center justify-center text-2xl font-semibold ">
+                                    3</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base">
+&lt;div class="flex flex-wrap">
+    &lt;div>1&lt;/div>
+    &lt;div>2&lt;/div>
+    &lt;div>3&lt;/div>
+&lt;/div></pre>
+                        </div>
+                        <div class="text-xl mt-4">ห่อกลับด้าน</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้ `flex-wrap-reverse` ห่อสินค้าแบบยืดหยุ่นในทิศทางย้อนกลับ:
+                        </div>
+                        <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 p-10">
+                            <div class="flex flex-wrap-reverse -m-2">
+                                <div
+                                    class="h-12 m-2 w-2/5 rounded-md text-white bg-purple-500 flex items-center justify-center text-2xl font-semibold ">
+                                    1</div>
+                                <div
+                                    class="h-12 m-2 w-2/5 rounded-md text-white bg-purple-500 flex items-center justify-center text-2xl font-semibold ">
+                                    2</div>
+                                <div
+                                    class="h-12 m-2 w-2/5 rounded-md text-white bg-purple-500 flex items-center justify-center text-2xl font-semibold ">
+                                    3</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base">
+&lt;div class="flex flex-wrap-reverse">
+    &lt;div>1&lt;/div>
+    &lt;div>2&lt;/div>
+    &lt;div>3&lt;/div>
+&lt;/div></pre>
+                        </div>
+                        <div class="text-xl mt-4">Grid</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้`grid`สร้างคอนเทนเนอร์กริด
+                        </div>
+                        <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 p-10">
+                            <div
+                                class="p-4 grid gap-4 grid-cols-3 bg-purple-300 bg-stripes bg-stripes-white rounded-md">
+                                <div class="bg-purple-400 rounded-md h-12"></div>
+                                <div class="bg-purple-500 rounded-md h-12"></div>
+                                <div class="bg-purple-400 rounded-md h-12"></div>
+                                <div class="bg-purple-500 rounded-md h-12"></div>
+                                <div class="bg-purple-400 rounded-md h-12"></div>
+                                <div class="bg-purple-500 rounded-md h-12"></div>
+                                <div class="bg-purple-400 rounded-md h-12"></div>
+                                <div class="bg-purple-500 rounded-md h-12"></div>
+                                <div class="bg-purple-400 rounded-md h-12"></div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4">
+                            <pre class="text-base">
+&lt;div class="grid gap-4 grid-cols-3...">
+    &lt;!-- ... --&gt;
+&lt;/div></pre>
+                        </div>
+                    </div>
+                    <!-- flex -->
+                    <li id="flex" class="text-gray-600">Flex</li>
+                    <div class="ml-4 my-4">
+                        <div class="text-base">ยูทิลิตีสำหรับควบคุมวิธีที่สินค้ายืดหยุ่นทั้งเติบโตและหดตัว</div>
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pr-2 border-b border-gray-200">Class</div>
+                                    </th>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pl-2 border-b border-gray-200">Properties</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-baseline">
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap">flex-1
+                                    </td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal">flex:
+                                        1
+                                        10%;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal border-t border-gray-200">
+                                        flex-auto</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        flex: 1 1 auto;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal border-t border-gray-200">
+                                        flex-initial</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        flex: 0 1 auto;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-normal border-t border-gray-200">
+                                        flex-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        flex: none;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-xl mt-4">อักษรย่อ</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้ `flex-initial` เพื่ออนุญาตให้รายการแบบยืดหยุ่นย่อแต่ไม่ขยาย โดยคำนึงถึงขนาดเริ่มต้น:
+                        </div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 p-10 mt-4 ml-4">
+                            <p class="text-sm text-purple-600">ไอเทมไม่โตเมื่อมีที่ว่าง</p>
+                            <div class="mt-2 flex space-x-4">
+                                <div
+                                    class="flex-initial rounded-md bg-purple-500 text-white font-semibold flex items-center justify-center py-3 px-6">
+                                    สั้น
+                                </div>
+                                <div
+                                    class="flex-initial rounded-md bg-purple-500 text-white font-semibold flex items-center justify-center py-3 px-6">
+                                    ยาวปานกลาง
+                                </div>
+                            </div>
+
+                            <p class="mt-8 text-sm text-purple-600">รายการหดตัวถ้าเป็นไปได้เมื่อจำเป็น</p>
+                            <div class="mt-2 flex space-x-4">
+                                <div
+                                    class="flex-initial rounded-md bg-purple-500 text-white font-semibold flex items-center justify-center py-3 px-6">
+                                    สั้น
+                                </div>
+                                <div
+                                    class="flex-initial rounded-md bg-purple-500 text-white font-semibold flex items-center justify-center py-3 px-6">
+                                    ยาวปานกลาง
+                                </div>
+                                <div
+                                    class="flex-initial rounded-md bg-purple-500 text-white font-semibold flex items-center justify-center py-3 px-6">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ad labore ipsam, aut
+                                    rem quo repellat esse tempore id, quidem
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base overflow-x-auto">
+&lt;div class="flex">
+    &lt;div class="flex-initial ...">
+        &lt;!-- Won't grow, but will shrink if needed --&gt;
+    &lt;/div>
+    &lt;div class="flex-initial ...">
+        &lt;!-- Won't grow, but will shrink if needed --&gt;
+    &lt;/div>
+    &lt;div class="flex-initial ...">
+        &lt;!-- Won't grow, but will shrink if needed --&gt;
+    &lt;/div>
+&lt;/div>
+</pre>
+                        </div>
+                        <div class="text-base mt-4">flex-auto</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้ `flex-auto` เพื่ออนุญาตให้รายการแบบยืดหยุ่นเติบโตและย่อขนาด โดยคำนึงถึงขนาดเริ่มต้น:
+                        </div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 p-10 mt-4 ml-4">
+                            <p class="text-sm text-blue-600">เริ่มต้น</p>
+                            <div class="mt-2 flex space-x-4">
+                                <div
+                                    class="rounded-md bg-blue-500 text-white font-semibold flex items-center justify-center py-3 px-6">
+                                    สั้น
+                                </div>
+                                <div
+                                    class="rounded-md bg-blue-500 text-white font-semibold flex items-center justify-center py-3 px-6">
+                                    ยาวปานกลาง
+                                </div>
+                                <div
+                                    class="rounded-md bg-blue-500 text-white font-semibold flex items-center justify-center py-3 px-6">
+                                    เนื้อหาจำนวนมากขึ้นอย่างเห็นได้ชัด
+                                </div>
+                            </div>
+
+                            <p class="mt-8 text-sm text-blue-600"><code>.flex-auto</code></p>
+                            <div class="mt-2 flex space-x-4">
+                                <div
+                                    class="flex-auto rounded-md bg-blue-500 text-white font-semibold flex items-center justify-center py-3 px-6">
+                                    สั้น
+                                </div>
+                                <div
+                                    class="flex-auto rounded-md bg-blue-500 text-white font-semibold flex items-center justify-center py-3 px-6">
+                                    ยาวปานกลาง
+                                </div>
+                                <div
+                                    class="flex-auto rounded-md bg-blue-500 text-white font-semibold flex items-center justify-center py-3 px-6">
+                                    เนื้อหาจำนวนมากขึ้นอย่างเห็นได้ชัด
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base overflow-x-auto">
+&lt;div class="flex">
+    &lt;div class="flex-initial ...">
+        &lt;!-- Won't grow, but will shrink if needed --&gt;
+    &lt;/div>
+    &lt;div class="flex-initial ...">
+        &lt;!-- Won't grow, but will shrink if needed --&gt;
+    &lt;/div>
+    &lt;div class="flex-initial ...">
+        &lt;!-- Won't grow, but will shrink if needed --&gt;
+    &lt;/div>
+&lt;/div></pre>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <!-- borders -->
+        <div id="borders" class="px-8 mt-4 text-xl">
+            <div class="text-2xl uppercase container my-4 flex items-end">
+                borders
+                <nav class="flex ml-4">
+                    <a href="#radius"
+                        class="hover:text-gray-400 hover:underline mr-4 uppercase text-base">รัศมีเส้นขอบ</a>
+                    <a href="#style"
+                        class="hover:text-gray-400 hover:underline mr-4 uppercase text-base">รูปแบบเส้นขอบ</a>
+                    <a href="#width" class="hover:text-gray-400 hover:underline mr-4 text-base">ความกว้างของเส้นขอบ</a>
+                </nav>
+                <hr class="my-4">
+            </div>
+            <div class="px-8 mt-4 text-xl">
+                <ul class="list-disc">
+                    <!-- borders -->
+                    <li id="radius" class="text-gray-600">รัศมีเส้นขอบ</li>
+                    <div class="ml-4 my-4">
+                        <div class="text-base">ยูทิลิตี้สำหรับควบคุมรัศมีเส้นขอบขององค์ประกอบ</div>
+                        <table class="w-full text-left border-collapse mt-4">
+                            <thead>
+                                <tr>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pr-2 border-b border-gray-200">Class</div>
+                                    </th>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pl-2 border-b border-gray-200">Properties</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-baseline">
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap">
+                                        rounded-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal">
+                                        border-radius: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-sm</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-radius: 0.125rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-radius: 0.25rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-md</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-radius: 0.375rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-lg</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-radius: 0.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-radius: 0.75rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-2xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-radius: 1rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-3xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-radius: 1.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-full</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-radius: 9999px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-t-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0px;
+                                        border-top-right-radius: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-t-sm</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.125rem;
+                                        border-top-right-radius: 0.125rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-t</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.25rem;
+                                        border-top-right-radius: 0.25rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-t-md</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.375rem;
+                                        border-top-right-radius: 0.375rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-t-lg</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.5rem;
+                                        border-top-right-radius: 0.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-t-xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.75rem;
+                                        border-top-right-radius: 0.75rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-t-2xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 1rem;
+                                        border-top-right-radius: 1rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-t-3xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 1.5rem;
+                                        border-top-right-radius: 1.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-t-full</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 9999px;
+                                        border-top-right-radius: 9999px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-r-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0px;
+                                        border-bottom-right-radius: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-r-sm</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0.125rem;
+                                        border-bottom-right-radius: 0.125rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-r</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0.25rem;
+                                        border-bottom-right-radius: 0.25rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-r-md</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0.375rem;
+                                        border-bottom-right-radius: 0.375rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-r-lg</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0.5rem;
+                                        border-bottom-right-radius: 0.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-r-xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0.75rem;
+                                        border-bottom-right-radius: 0.75rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-r-2xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 1rem;
+                                        border-bottom-right-radius: 1rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-r-3xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 1.5rem;
+                                        border-bottom-right-radius: 1.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-r-full</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 9999px;
+                                        border-bottom-right-radius: 9999px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-b-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0px;
+                                        border-bottom-left-radius: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-b-sm</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0.125rem;
+                                        border-bottom-left-radius: 0.125rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-b</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0.25rem;
+                                        border-bottom-left-radius: 0.25rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-b-md</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0.375rem;
+                                        border-bottom-left-radius: 0.375rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-b-lg</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0.5rem;
+                                        border-bottom-left-radius: 0.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-b-xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0.75rem;
+                                        border-bottom-left-radius: 0.75rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-b-2xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 1rem;
+                                        border-bottom-left-radius: 1rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-b-3xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 1.5rem;
+                                        border-bottom-left-radius: 1.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-b-full</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 9999px;
+                                        border-bottom-left-radius: 9999px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-l-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0px;
+                                        border-bottom-left-radius: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-l-sm</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.125rem;
+                                        border-bottom-left-radius: 0.125rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-l</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.25rem;
+                                        border-bottom-left-radius: 0.25rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-l-md</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.375rem;
+                                        border-bottom-left-radius: 0.375rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-l-lg</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.5rem;
+                                        border-bottom-left-radius: 0.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-l-xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.75rem;
+                                        border-bottom-left-radius: 0.75rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-l-2xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 1rem;
+                                        border-bottom-left-radius: 1rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-l-3xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 1.5rem;
+                                        border-bottom-left-radius: 1.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-l-full</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 9999px;
+                                        border-bottom-left-radius: 9999px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tl-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tl-sm</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.125rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.25rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tl-md</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.375rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tl-lg</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tl-xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 0.75rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tl-2xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 1rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tl-3xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 1.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tl-full</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-left-radius: 9999px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tr-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tr-sm</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0.125rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tr</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0.25rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tr-md</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0.375rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tr-lg</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tr-xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 0.75rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tr-2xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 1rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tr-3xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 1.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-tr-full</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-right-radius: 9999px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-br-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-br-sm</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0.125rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-br</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0.25rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-br-md</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0.375rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-br-lg</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-br-xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 0.75rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-br-2xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 1rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-br-3xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 1.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-br-full</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-right-radius: 9999px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-bl-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-left-radius: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-bl-sm</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-left-radius: 0.125rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-bl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-left-radius: 0.25rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-bl-md</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-left-radius: 0.375rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-bl-lg</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-left-radius: 0.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-bl-xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-left-radius: 0.75rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-bl-2xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-left-radius: 1rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-bl-3xl</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-left-radius: 1.5rem;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        rounded-bl-full</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-left-radius: 9999px;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-xl mt-4">มุมโค้งมน</div>
+                        <div class="text-base mt-4 ml-4">ใช้ชื่อคลาสเช่น.rounded-sm, .rounded,
+                            หรือ.rounded-lgเพื่อใช้ขนาดรัศมีเส้นขอบต่างๆ กับองค์ประกอบ</div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-blue-50 to-blue-100 p-10 ml-4 mt-4">
+                            <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                                <div
+                                    class="p-6 bg-blue-500 text-white text-center font-extrabold flex items-center justify-center rounded-sm">
+                                    .rounded-sm</div>
+                                <div
+                                    class="p-6 bg-blue-500 text-white text-center font-extrabold flex items-center justify-center rounded">
+                                    .rounded</div>
+                                <div
+                                    class="p-6 bg-blue-500 text-white text-center font-extrabold flex items-center justify-center rounded-md">
+                                    .rounded-md</div>
+                                <div
+                                    class="p-6 bg-blue-500 text-white text-center font-extrabold flex items-center justify-center rounded-lg">
+                                    .rounded-lg</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base">
+&lt;div class="rounded-sm ..."> &lt;/div>
+&lt;div class="rounded ..."> &lt;/div>
+&lt;div class="rounded-md ..."> &lt;/div>
+&lt;div class="rounded-lg ..."> &lt;/div></pre>
+                        </div>
+                        <div class="text-xl mt-4">ยาเม็ดและวงกลม</div>
+                        <div class="text-base mt-4 ml-4">ใช้ `rounded-full` ยูทิลิตี้นี้เพื่อสร้างเม็ดยาและวงกลม</div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 p-10 mt-4 ml-4">
+                            <div class="flex justify-center items-center space-x-6">
+                                <div class="bg-purple-500 px-6 py-3 text-white text-center font-extrabold rounded-full">
+                                    รูปร่างเม็ด</div>
+                                <div
+                                    class="bg-purple-500 h-24 w-24 text-white text-center font-extrabold flex items-center justify-center rounded-full">
+                                    วงกลม</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-sm">
+&lt;div class="rounded-full py-3 px-6...">Pill Shape &lt;/div>
+&lt;div class="rounded-full h-24 w-24 flex items-center justify-center..."> Circle&lt;/div>
+</pre>
+                        </div>
+                        <div class="text-xl mt-4">ไม่ใช้ rounded</div>
+                        <div class="text-base mt-4 ml-4">ใช้ `rounded-none` เพื่อลบรัศมีเส้นขอบที่มีอยู่ออกจากองค์ประกอบ
+                            โดยทั่วไปจะใช้เพื่อลบรัศมีเส้นขอบที่ใช้ที่เบรกพอยต์ที่เล็กกว่า</div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-red-50 to-red-100 p-10 mt-4 ml-4">
+                            <div class="flex justify-center items-center">
+                                <div class="bg-red-500 p-6 text-white text-center font-extrabold rounded-none">
+                                    .rounded-none</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base">
+                                &lt;div class="rounded-none ...">.rounded-none&lt;/div></pre>
+                        </div>
+                        <div class="text-xl mt-4">ทำโค้งแยกด้านกัน</div>
+                        <div class="text-base mt-4 ml-4">ใช้ `rounded-{t|r|b|l}{-size?}` โค้งด้านเดียวขององค์ประกอบ
+                        </div>
+                        <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-green-50 to-green-100 p-10">
+                            <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-2">
+                                <div class="bg-green-500 p-6 text-white text-center font-extrabold rounded-t-lg">
+                                    .rounded-t-lg</div>
+                                <div class="bg-green-500 p-6 text-white text-center font-extrabold rounded-r-lg">
+                                    .rounded-r-lg</div>
+                                <div class="bg-green-500 p-6 text-white text-center font-extrabold rounded-b-lg">
+                                    .rounded-b-lg</div>
+                                <div class="bg-green-500 p-6 text-white text-center font-extrabold rounded-l-lg">
+                                    .rounded-l-lg</div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base">
+&lt;div class="rounded-t-lg ...">.rounded-t-lg&lt;/div>
+&lt;div class="rounded-r-lg ...">.rounded-r-lg&lt;/div>
+&lt;div class="rounded-b-lg ...">.rounded-b-lg&lt;/div>
+&lt;div class="rounded-l-lg ...">.rounded-l-lg&lt;/div></pre>
+                        </div>
+                    </div>
+                    <!-- flex wrap -->
+                    <li id="style" class="text-gray-600">รูปแบบเส้นขอบ</li>
+                    <div class="ml-4 my-4">
+                        <div class="text-base">สำหรับควบคุมรูปแบบของเส้นขอบขององค์ประกอบ</div>
+                        <table class="w-full text-left border-collapse mt-4">
+                            <thead>
+                                <tr>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pr-2 border-b border-gray-200">Class</div>
+                                    </th>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pl-2 border-b border-gray-200">Properties</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-baseline">
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap">
+                                        border-solid</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal">
+                                        border-style: solid;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-dashed</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-style: dashed;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-dotted</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-style: dotted;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-double</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-style: double;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-none</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-style: none;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-xl mt-4">การใช้งาน</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้ `border-{style}` เพื่อควบคุมรูปแบบเส้นขอบขององค์ประกอบ
+                        </div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 p-10 mt-4 ml-4">
+                            <div class="grid grid-cols-2 gap-2 lg:grid-cols-3">
+                                <div
+                                    class="border-solid h-16 flex-1 rounded-md border-4 border-purple-500 border-opacity-100 font-extrabold text-purple-600 flex justify-center items-center">
+                                    .border-solid
+                                </div>
+                                <div
+                                    class="border-dashed h-16 flex-1 rounded-md border-4 border-purple-500 border-opacity-100 font-extrabold text-purple-600 flex justify-center items-center">
+                                    .border-dashed
+                                </div>
+                                <div
+                                    class="border-dotted h-16 flex-1 rounded-md border-4 border-purple-500 border-opacity-100 font-extrabold text-purple-600 flex justify-center items-center">
+                                    .border-dotted
+                                </div>
+                                <div
+                                    class="border-double h-16 flex-1 rounded-md border-4 border-purple-500 border-opacity-100 font-extrabold text-purple-600 flex justify-center items-center">
+                                    .border-double
+                                </div>
+                                <div
+                                    class="border-none h-16 flex-1 rounded-md border-4 border-purple-500 border-opacity-100 font-extrabold text-purple-600 flex justify-center items-center">
+                                    .border-none
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base">
+&lt;div class="border-solid border-4 border-blue-500 ...">&lt;/div>
+&lt;div class="border-dashed border-4 border-blue-500 ...">&lt;/div>
+&lt;div class="border-dotted border-4 border-blue-500 ...">&lt;/div>
+&lt;div class="border-double border-4 border-blue-500 ...">&lt;/div>
+&lt;div class="border-none border-4 border-blue-500 ...">&lt;/div></pre>
+                        </div>
+                    </div>
+                    <!-- flex -->
+                    <li id="width" class="text-gray-600">ความกว้างของเส้นขอบ</li>
+                    <div class="ml-4 my-4">
+                        <div class="text-base">ยูทิลิตีสำหรับควบคุมวิธีที่สินค้ายืดหยุ่นทั้งเติบโตและหดตัว</div>
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pr-2 border-b border-gray-200">Class</div>
+                                    </th>
+                                    <th class="z-20  top-0 text-sm font-semibold text-gray-600 bg-white p-0">
+                                        <div class="pb-2 pl-2 border-b border-gray-200">Properties</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-baseline">
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap">border-0
+                                    </td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal">
+                                        border-width: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-2</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-width: 2px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-4</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-width: 4px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-8</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-width: 8px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-width: 1px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-t-0</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-width: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-t-2</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-width: 2px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-t-4</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-width: 4px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-t-8</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-width: 8px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-t</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-top-width: 1px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-r-0</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-right-width: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-r-2</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-right-width: 2px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-r-4</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-right-width: 4px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-r-8</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-right-width: 8px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-r</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-right-width: 1px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-b-0</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-width: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-b-2</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-width: 2px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-b-4</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-width: 4px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-b-8</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-width: 8px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-b</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-bottom-width: 1px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-l-0</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-left-width: 0px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-l-2</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-left-width: 2px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-l-4</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-left-width: 4px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-l-8</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-left-width: 8px;</td>
+                                </tr>
+                                <tr>
+                                    <td translate="no"
+                                        class="py-2 pr-2 font-mono text-xs text-purple-600 whitespace-nowrap border-t border-gray-200">
+                                        border-l</td>
+                                    <td translate="no"
+                                        class="py-2 pl-2 font-mono text-xs text-blue-600 whitespace-normal border-t border-gray-200">
+                                        border-left-width: 1px;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-xl mt-4">
+                            ทุกด้าน</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้ `border`, `.border-0`, `.border-2`, `.border-4`, หรือ`.border-8`
+                            ยูทิลิตี้เพื่อกำหนดความกว้างของเส้นขอบสำหรับทุกด้านขององค์ประกอบ
+                        </div>
+                        <div
+                            class="rounded-t-xl overflow-hidden bg-gradient-to-r from-purple-50 to-purple-100 p-10 ml-4">
+                            <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+                                <div
+                                    class="p-4 bg-purple-300 text-white text-center font-extrabold flex items-center justify-center border-0 border-purple-600">
+                                    .border-0
+                                </div>
+                                <div
+                                    class="p-4 bg-purple-300 text-white text-center font-extrabold flex items-center justify-center border border-purple-600">
+                                    .border
+                                </div>
+                                <div
+                                    class="p-4 bg-purple-300 text-white text-center font-extrabold flex items-center justify-center border-2 border-purple-600">
+                                    .border-2
+                                </div>
+                                <div
+                                    class="p-4 bg-purple-300 text-white text-center font-extrabold flex items-center justify-center border-4 border-purple-600">
+                                    .border-4
+                                </div>
+                                <div
+                                    class="p-4 bg-purple-300 text-white text-center font-extrabold flex items-center justify-center border-8 border-purple-600">
+                                    .border-8
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base overflow-x-auto">
+&lt;div class="border-0 border-indigo-600 ...">&lt;/div>
+&lt;div class="border border-indigo-600 ...">&lt;/div>
+&lt;div class="border-2 border-indigo-600 ...">&lt;/div>
+&lt;div class="border-4 border-indigo-600 ...">&lt;/div>
+&lt;div class="border-8 border-indigo-600 ...">&lt;/div>
+</pre>
+                        </div>
+                        <div class="text-xl mt-4">เส้นขอบด้านเดียว</div>
+                        <div class="text-base px-4 text-gray-700 my-4">
+                            ใช้`border-{side}`, `.border-{side}-0`, `.border-{side}-2`, `.border-{side}-4`,
+                            หรือ`.border-{side}-8`ยูทิลิตี้เพื่อกำหนดความกว้างของเส้นขอบสำหรับด้านใดด้านหนึ่งขององค์ประกอบ`
+                        </div>
+                        <div class="rounded-t-xl overflow-hidden bg-gradient-to-r from-pink-50 to-pink-100 p-10 ml-4">
+                            <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
+                                <div
+                                    class="p-4 bg-pink-300 text-white text-center font-extrabold flex items-center justify-center border-t-2 border-pink-600">
+                                    .border-t-2
+                                </div>
+                                <div
+                                    class="p-4 bg-pink-300 text-white text-center font-extrabold flex items-center justify-center border-r-2 border-pink-600">
+                                    .border-r-2
+                                </div>
+                                <div
+                                    class="p-4 bg-pink-300 text-white text-center font-extrabold flex items-center justify-center border-b-2 border-pink-600">
+                                    .border-b-2
+                                </div>
+                                <div
+                                    class="p-4 bg-pink-300 text-white text-center font-extrabold flex items-center justify-center border-l-2 border-pink-600">
+                                    .border-l-2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-md p-4 shadow-md bg-white text-gray-800 mt-4 ml-4">
+                            <pre class="text-base overflow-x-auto">
+&lt;div class="border-t-2 border-fuchsia-600 ...">&lt;/div>
+&lt;div class="border-r-2 border-fuchsia-600 ...">&lt;/div>
+&lt;div class="border-b-2 border-fuchsia-600 ...">&lt;/div>
+&lt;div class="border-l-2 border-fuchsia-600 ...">&lt;/div></pre>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="maker" class="container px-40">
+        <div class="text-3xl uppercase container mt-10">
+            ผู้จัดทำ : 
+            <hr class="my-4">
+        </div>
+        <div class="px-8 mt-4 text-xl">
+            <div class="rounded-md p-4 shadow-md font">
+                พิสิฐไชย เรืองวัฒนาพงษ์ รหัสนักศึกษา 63070121
+            </div>
+        </div>
+    </section>
+    <!-- navbar -->
+    <footer id="source" class="w-full px-12 bg-blue-100 py-10 mt-10">
+        <div class="flex justify-center items-center mx-auto text-xl">
+            <a href="https://tailwindcss.com/docs" class="hover:text-blue-300 hover:underline mr-4 p-10 w-1/4 text-center rounded-md shadow-xl transition ">เว็บทางการ tailwind</a>
+            <a href="https://www.morphos.is/th/tailwind-css-a-framework-that-makes-dev-work-easier/" class="hover:text-blue-300 hover:underline mr-4 p-10 w-1/4 text-center rounded-md shadow-xl transition ">ข้อมูล</a>
+        </div>
+    </footer>
+</body>
+
+</html>

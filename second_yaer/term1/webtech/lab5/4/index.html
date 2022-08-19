@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body style="display: flex; justify-items : center; width: 100vw;">
+    <script>
+        let requestURL = 'countries.json';
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {             
+                dataReportStatus(JSON.parse(request.responseText));            
+            } 
+        }; 
+        request.open("GET", requestURL, true); 
+        request.send();
+
+        function dataReportStatus(data){
+            for (let i = 0; i < data.length; i++){
+                //box
+                document.write("<div style='display: flex; justify-content: space-between; align-items: center; border: 2px solid black; border-radius: 1rem; width: 40%; padding: 1rem; font-family: Prompt, sans-serif;'>");
+                //1
+                document.write("<div>");
+                document.write("Name : <b>" + data[i].name+"</b><br>");
+                document.write("Capital : " + data[i].capital + "<br>");
+                document.write("Population : " + data[i].population + "<br>");
+                document.write("Region : " + data[i].region + "<br>");
+                document.write("Location : ");
+                for (let j = 0; j < data[i].latlng.length; j++){
+                    document.write(data[i].latlng[j] + " ");
+                }
+                document.write("<br>")
+                document.write("Borders : ")
+                for (let k = 0; k < data[i].borders.length; k++){
+                    document.write(data[i].borders[k] + " ");
+                }
+                document.write("</div>");
+                //2 
+                document.write("<div>");
+                document.write("<img style = 'height:100px; margin-left: 1rem; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;' src="+data[i].flag+">");
+                document.write("</div>");
+                document.write("</div><br>");
+            }
+        }
+    </script>
+</body>
+</html>

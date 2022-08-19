@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>ลงทะเบียนร่วมงาน</h3>
+    <input type="number" id="std-number" maxlength="8">
+    <input type="text" id="std-name">
+    <input type="text" id="std-lastname">
+    <button onclick="submit()">ลงทะเบียน</button>
+    <table id="show" border=1 style="border-collapse: collapse;">
+        <tr>
+            <th>ลำดับที่</th>
+            <th>รหัสนักศึกษา</th>
+            <th>ชื่อ</th>
+            <th>นามสกุล</th>
+        </tr>
+    </table>
+    <script>
+        let submit = () => {
+            let number = document.querySelector("#std-number").value
+            let name = document.querySelector("#std-name").value
+            let lastname = document.querySelector("#std-lastname").value
+            let i = 1;
+            let table = document.querySelector("#show");
+            let row = table.insertRow(-1);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            cell1.innerHTML = i;
+            cell2.innerHTML = number;
+            cell3.innerHTML = name;
+            cell4.innerHTML = lastname;
+            ++i;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h1>MUSIC</h1>
+        <hr>
+    </nav>
+    Resently Played
+    <script>
+        let requestURL = 'music.json';
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {             
+                dataReportStatus(JSON.parse(request.responseText));            
+            } 
+        }; 
+        request.open("GET", requestURL, true); 
+        request.send();
+
+        function dataReportStatus(data){
+            //big box
+            document.write("<div style = 'width: 100%; height: auto; display: grid; grid-template-columns: auto auto auto auto auto auto; grid-column-gap: 1rem; font-family: Prompt, sans-serif;'>")
+            for (let i = 0; i < data.length; i++){
+                document.write("<div style = 'width: 10rem; height: 15rem; margin-bottom: 3rem;'>")
+                document.write("<img style='height: 10rem; border-radius: .4rem;' src=" + data[i].image + ">")
+                document.write("<h4 style='margin: 0; margin-top: 1rem;'>" + data[i].song + "</h4>")
+                document.write("<p style='margin:0; font-size: .7rem'>" + data[i].artist + "</p>")
+                document.write("</div>")
+            }
+            document.write("</div>")
+        }
+    </script>
+</body>
+</html>

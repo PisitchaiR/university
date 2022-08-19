@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tailwind.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="w-full">
+        <form id="myForm" class="rounded px-8 pt-6 pb-8 mb-4 flex items-center space-x-4" onsubmit="return false">
+            <div class="flex items-center w-1/4 space-x-4">
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="number" type="text">
+            </div>
+            <div class="flex items-center justify-between">
+                <button id="button"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="button">
+                    <p>Submit</p>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div id="col" class="gridd grid">
+
+    </div>
+    <script>
+        document.getElementById('button').onclick = function () {
+            document.querySelector("#col").innerHTML = ""
+            let num = document.getElementById('number').value;
+            var numcheck = 0;
+            for (var i = 0; i < num ; i++) {
+                if(i % 8 == 0){
+                    numcheck += 1;
+                }
+                numcheck += 1;
+                let parent = document.getElementById('col');
+                let box = document.createElement('div');
+                if(numcheck % 2 == 0){
+                    parent.appendChild(box).classList.add('box');
+                }
+                else{
+                    parent.appendChild(box).classList.add('box2');
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

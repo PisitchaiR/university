@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card text-center">
+      <div class="card-header">
+        <h3>ผลรางวัลสลากกินแบ่งรัฐบาล</h3><span>งานประจำวันที่ 1 กันยายน 2563</span>
+      </div>
+      <div class="card-body">
+        <h3>รางวัลที่ 1</h3>
+        <div id="first">777323</div>
+        <div class="row mt-3">
+          <div class="col">
+            <h5>รางวัลเลขหน้า 3 ตัว</h5>
+            <div id="front">534</div>
+          </div>
+          <div class="col">
+            <h5>เลขท้าย 2 ตัว</h5>
+            <div id="two-back">22</div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <h5>รางวัลเลขท้าย 3 ตัว</h5>
+            <div id="back">745</div>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+      <div class="card-footer text-muted">
+        <div onclick="sampling()" class="btn btn-warning">สุ่มอีกรอบ</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let sampling = () => {
+      document.querySelector("#first").innerHTML = String(Math.floor(Math.random() * 100000)).padStart(6, '0');
+      document.querySelector("#front").innerHTML = String(Math.floor(Math.random() * 1000)).padStart(3, '0');
+      document.querySelector("#back").innerHTML = String(Math.floor(Math.random()*1000)).padStart(3, '0');
+      document.querySelector("#two-back").innerHTML = String(Math.floor(Math.random() * 100)).padStart(2, '0');
+    }
+  </script>
+</body>
+
+</html>

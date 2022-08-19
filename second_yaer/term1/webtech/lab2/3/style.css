@@ -1,0 +1,36 @@
+header{
+    display: flex;
+    flex-direction: row;
+}
+.image-container{
+    background-image: url(./img/logo.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10vw;
+    height: 5vh;
+    margin-right: 1rem;
+    border-radius: 1rem;
+}
+
+li {
+    padding: 0.5rem;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: gray;
+}
+footer{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    bottom: 0px;
+    border: 1px solid black;
+    padding: 1rem;
+}

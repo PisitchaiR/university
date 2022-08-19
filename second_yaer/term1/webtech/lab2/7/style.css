@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+h1{
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.img1 {
+    background-image: url(./img/tank.png);
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+}
+.img2 {
+    background-image: url(./img/plane.png);
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+}
+.img3 {
+    background-image: url(./img/submarine.png);
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.card-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    background-color: rgb(228, 228, 228);
+    border-radius: 1rem;
+
+}
+button{
+    padding: 0.5rem;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+button:nth-child(1){
+    background-color: rgb(212, 212, 212);
+}
+button:nth-child(2){
+    background-color: rgb(149, 156, 255);
+}

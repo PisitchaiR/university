@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="input-container">
+        <label for="val1">Value 1:</label>
+        <input type="number" id="val1" placeholder="value1">
+    </div>
+    <div class="input-container">
+        <label for="val2">Value 2:</label>
+        <input type="number" id="val2" placeholder="value1">
+    </div>
+    <button onclick="cal()">Calculate</button>
+    <div id="show"></div>
+    <script>
+        let cal = () => {
+            let val2 = parseInt(document.querySelector("#val1").value);
+            let val1 = parseInt(document.querySelector("#val2").value);
+            let result = val1+val2;
+            let ptag = document.createElement("p");
+            let show = document.querySelector("#show");
+            ptag.innerHTML = `${val1} + ${val2} = ${result}`;
+            show.appendChild(ptag)
+        }
+    </script>
+</body>
+</html>

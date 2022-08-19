@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .img {
+            background-image: url(./img/img.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid bg-light">
+        <div class="row">
+            <div class="col">
+                <div class="card m-4">
+                    <div class="card-body">
+                        <form id="form">
+                            <h2>Create your card</h2>
+                            <div class="input-container mt-2">
+                                <label for="username">Full Name</label>
+                                <input type="text" name="username" class="form-control">
+                            </div>
+                            <div class="input-container mt-2">
+                                <label for="phone">Phone</label>
+                                <input type="number" name="phone" class="form-control">
+                            </div>
+                            <div class="input-container mt-2">
+                                <label for="email">E-mail</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
+                            <div class="input-container mt-2">
+                                <label for="company">Company</label>
+                                <input type="text" name="company" class="form-control">
+                            </div>
+                            <button class="btn btn-primary mt-3 container-fluid" id="submit">Create</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col text-center d-flex justify-content-center align-items-center flex-column">
+                <div class="text-uppercase">your card here</div>
+                <div class="row">
+                    <div class="card text-start text-black text-left font p-4 col" id="show"
+                        style="background-color: antiquewhite; font-size:larger; width: 40vw; height: 30vh;"></div>
+                    <div class="col img h-auto w-auto"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector("#submit").addEventListener("click", (e) => {
+            e.preventDefault();
+            let name = document.forms["form"]["username"].value;
+            let phone = document.forms["form"]["phone"].value;
+            let email = document.forms["form"]["email"].value;
+            let company = document.forms["form"]["company"].value;
+            if (name === "" || phone === "" || email === "" || company === "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                });
+            } else {
+                document.querySelector('#show').innerHTML =
+                `
+                    <div class="font-weight-bold">${name}</div>
+                    <div class="text-black-50 mt-2">${phone}</div>
+                    <div class="text-black-50">${email}</div>
+                    <div class="text-black-50">${company}</div>
+                `
+            }
+        })
+    </script>
+</body>
+
+</html>

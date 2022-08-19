@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+        *{
+            font-family: 'Inconsolata', monospace;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let requestURL = 'person.json';
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {             
+                dataReportStatus(JSON.parse(request.responseText));            
+            } 
+        }; 
+        request.open("GET", requestURL, true); 
+        request.send(); 
+
+        function dataReportStatus(data) { 
+            for (let i = 0; i < data.members.length; i++) { 
+            document.write(data.members[i].id+" ");
+            document.write("<b>" + data.members[i].firstname + "</b>" + " ");
+            document.write("<b>" + data.members[i].lastname + "</b>" + " ");
+            document.write("(" + data.members[i].gender + ")" + " is a ");
+            document.write(data.members[i].position + ", ");
+            document.write(data.members[i].address + "<br>");
+            }
+        } 
+    </script>
+</body>
+</html>
